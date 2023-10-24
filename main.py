@@ -2,7 +2,7 @@ def encode(password):
     encoded = ""
     for element in password:
         digit = int(element)
-        new_digit = (digit + 3) % 10
+        new_digit = (digit + 3) % 10  # Add 3 to each digit, if sum > 10, will only take ones digit
         encoded += str(new_digit)
 
     return encoded
@@ -11,7 +11,7 @@ def decode(password):
     pass
 
 
-while True:
+while True:  # repeat until loop exited by user
     print("Menu")
     print("-------------")
     print("1. Encode")
