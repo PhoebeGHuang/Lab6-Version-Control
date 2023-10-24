@@ -1,3 +1,4 @@
+#PhoebeHuang
 def encode(password):
     encoded = ""
     for element in password:
@@ -8,7 +9,12 @@ def encode(password):
     return encoded
 
 def decode(password):
-    pass
+    original_password = ''
+    for value in password:
+        new_value = (int(value) - 3) % 10  #shifts each digit down by 3 & wraps
+        original_password += str(new_value)
+
+    return original_password
 
 
 while True:  # repeat until loop exited by user
@@ -24,7 +30,6 @@ while True:  # repeat until loop exited by user
         password = input("Please enter your password to encode: ")
         encoded = encode(password)
         print("Your password has been encoded and stored!")
-        print(encoded)
         print()
 
     if menu_option == "2":
